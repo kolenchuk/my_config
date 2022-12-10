@@ -1,0 +1,26 @@
+#!/bin/sh
+
+## autoload vcs and colors
+autoload -Uz vcs_info
+autoload -U colors && colors
+
+# enable only git 
+zstyle ':vcs_info:*' enable git
+#zstyle ':vcs_info:git:*' formats "%{$fg[cyan]%}-[%b]- %{$reset_color%}"
+zstyle ':vcs_info:git:*' formats "%b"
+
+
+precmd() {
+  vcs_info
+
+  RPROMPT="%*"
+
+  if [[ -n ${vcs_info_msg_0_} ]]; then
+    RPROMPT="%F{cyan}-[${vcs_info_msg_0_}]-%f $RPROMPT"
+  fi
+
+  PROMPT="%f%{$fg[green]%}%2~"
+  PROMPT+="%{$reset_color%} %(!.#.>) "
+}
+
+
