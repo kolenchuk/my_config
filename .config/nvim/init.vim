@@ -62,10 +62,11 @@ let g:airline_symbols.linenr = ''
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
-set gdefault='g'
+"set gdefault='g'
 "set clipboard+=unnamed
 nnoremap yy "+yy
 vnoremap y "+y
+nnoremap dd "+dd
 
 nnoremap p "+p
 vnoremap p "+p

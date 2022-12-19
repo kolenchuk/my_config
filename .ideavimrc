@@ -28,11 +28,13 @@ set gdefault='g'
 "set clipboard+=unnamed
 nnoremap yy "+yy
 vnoremap y "+y
+nnoremap dd "+d
 
 nnoremap p "+p
 vnoremap p "+p
 nnoremap P "+P
 vnoremap P "+P
+
 
 map <leader>f <Plug>(easymotion-s)
 map <leader>e <Plug>(easymotion-f)
